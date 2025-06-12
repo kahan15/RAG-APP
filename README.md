@@ -70,7 +70,7 @@ RAG-APP/
 
 1. **Ingestion:** Users upload files or provide URLs. Each is processed and embedded into a vector store (ChromaDB).
 2. **Chat:** User asks a question via the web UI. The backend:
-   - Retrieves relevant chunks from the vector DB
+   - Retrieves relevant chunks from the vector DB (Relevance is a normalized score, typically between 0 to 1 derived from the similarity between the user's question embedding and each chunk's embedding in ChromaDB, with higher values indicating greater relevance. This is handled automatically by the vector search and LangChain integration.)
    - Passes context to the LLM (Ollama or other local models)
    - Returns an answer with cited sources
 3. **Web UI:** Interactive chat interface, file upload, and source display

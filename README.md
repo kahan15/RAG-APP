@@ -6,7 +6,7 @@ A local-first Retrieval-Augmented Generation (RAG) chatbot that can process and 
 
 ## Features
 
-- **Multi-source ingestion:** PDF, DOCX, TXT, MD, web pages (static/dynamic), databases, and images (with OCR)
+- **Multi-source ingestion:** PDF, DOCX, TXT, web pages (static/dynamic), and images (with OCR)
 - **RAG Engine:** Combines semantic search (vector DB) with LLMs for grounded, factual answers
 - **Conversational memory:** Maintains chat history for context-aware responses
 - **Source citation:** Returns sources for each answer, increasing transparency

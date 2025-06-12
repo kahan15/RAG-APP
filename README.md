@@ -1,12 +1,12 @@
 # RAG-APP
 
-A local-first Retrieval-Augmented Generation (RAG) chatbot that can process and interact with multiple data sources including documents, websites, and images. RAG-APP is designed for privacy, extensibility, and ease of use, leveraging only free and open-source technologies.
+A local-first Retrieval-Augmented Generation (RAG) chatbot that can process and interact with multiple data sources including documents and websites. RAG-APP is designed for privacy, extensibility, and ease of use, leveraging only free and open-source technologies.
 
 ---
 
 ## Features
 
-- **Multi-source ingestion:** PDF, DOCX, TXT, web pages (static/dynamic), and images (with OCR)
+- **Multi-source ingestion:** PDF, DOCX, TXT, web pages (static/dynamic)
 - **RAG Engine:** Combines semantic search (vector DB) with LLMs for grounded, factual answers
 - **Conversational memory:** Maintains chat history for context-aware responses
 - **Source citation:** Returns sources for each answer, increasing transparency
@@ -43,7 +43,7 @@ RAG-APP/
 ├── app/
 │   ├── api/            # FastAPI routes (chat, ingestion)
 │   ├── core/           # Core RAG logic (engine, chat, ingestion, logger)
-│   ├── ingestion/      # Data loaders (documents, web, images, databases)
+│   ├── ingestion/      # Data loaders (documents, web, images)
 │   ├── static/         # Static files for web UI (CSS, JS)
 │   ├── templates/      # HTML templates for web UI
 ├── data/               # Vector store, sample docs/images
@@ -60,7 +60,7 @@ RAG-APP/
 - **`core/engine_singleton.py`**: Singleton pattern for engine instance
 - **`core/ingestion.py`**: File/web ingestion logic
 - **`core/chat.py`**: Chat orchestration and formatting
-- **`ingestion/`**: Data loaders for documents, web, images, databases
+- **`ingestion/`**: Data loaders for document and web
 - **`api/`**: FastAPI routers for chat and ingestion endpoints
 - **`static/`, `templates/`**: Web UI assets
 
@@ -68,7 +68,7 @@ RAG-APP/
 
 ## How it Works
 
-1. **Ingestion:** Users upload files, provide URLs, or connect databases/images. Each is processed and embedded into a vector store (ChromaDB).
+1. **Ingestion:** Users upload files or provide URLs. Each is processed and embedded into a vector store (ChromaDB).
 2. **Chat:** User asks a question via the web UI. The backend:
    - Retrieves relevant chunks from the vector DB
    - Passes context to the LLM (Ollama or other local models)
@@ -134,7 +134,7 @@ RAG-APP/
 
 ## Usage
 
-- **Upload documents, images, or provide URLs** via the web UI
+- **Upload documents or provide URLs** via the web UI
 - **Ask questions** in natural language
 - **Get answers** with cited sources and conversational context
 - **Review logs** in the `logs/` directory for debugging

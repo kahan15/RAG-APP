@@ -1,0 +1,10 @@
+{"timestamp": "2025-06-16T10:41:34.055013", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is artificial intelligence?"}
+{"timestamp": "2025-06-16T10:42:47.225054", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is Wikipedia?"}
+{"timestamp": "2025-06-16T10:44:08.058009", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "for what people are using Wikipedia?"}
+{"timestamp": "2025-06-16T10:53:38.727834", "model": "qwen2.5:1.5b", "source_type": "Direct Chat", "query": "for what people are using Wikipedia?"}
+{"timestamp": "2025-06-16T10:54:34.595273", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is AI?"}
+{"timestamp": "2025-06-16T10:55:50.171030", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "for what purpose Artificial intelligence is use?"}
+{"timestamp": "2025-06-16T10:56:17.932726", "model": "llama3.2", "source_type": "Wikipedia", "query": "for what purpose Artificial intelligence is use?"}
+{"timestamp": "2025-06-16T10:56:35.909540", "model": "llama3.2", "source_type": "Wikipedia", "query": "what is AI?"}
+{"timestamp": "2025-06-16T10:57:33.565794", "model": "llama3.2", "source_type": "Wikipedia", "query": "for what purpose people are using Wikipdia?"}
+{"timestamp": "2025-06-16T10:58:01.444491", "model": "llama3.2", "source_type": "Wikipedia", "query": "what is in trending?"}

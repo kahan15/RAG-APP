@@ -1,190 +1,210 @@
-# RAG-APP
+# Ollama AI Chat Application
 
-A local-first Retrieval-Augmented Generation (RAG) chatbot that can process and interact with multiple data sources including documents and websites. RAG-APP is designed for privacy, extensibility, and ease of use, leveraging only free and open-source technologies.
-
----
+A full-featured chat application that allows you to interact with various AI models through Ollama, supporting multiple data sources including documents, websites, databases, and more.
 
 ## Features
 
-- **Multi-source ingestion:** PDF, DOCX, TXT, web pages (static/dynamic)
-- **RAG Engine:** Combines semantic search (vector DB) with LLMs for grounded, factual answers
-- **Conversational memory:** Maintains chat history for context-aware responses
-- **Source citation:** Returns sources for each answer, increasing transparency
-- **Web UI:** Modern, interactive chat interface (HTML/JS/CSS)
-- **Extensible:** Modular ingestion and core logic for easy extension
-- **Local & Private:** Runs fully locally, no cloud dependencies (except optional web search)
+- 💬 Chat with various Ollama models (llama3, gemma, phi3, qwen)
+- 📚 Multiple source types: Direct Chat, Wikipedia, Database, PDF, Word, Website
+- 🖼️ Multimodal support (image processing)
+- 🧠 Conversation memory and context retention
+- 📊 Database querying capabilities
+- 📄 Document processing (PDF, Word)
+- 📚 Images processing
+- 🌐 Website content extraction
+- 🔍 Wikipedia integration
+- 🎨 Modern, responsive UI
 
----
+## Screenshots
 
-## Tech Stack & Major Dependencies
+### Main Chat Interface
+![Interface](https://github.com/Henilgajera/Ollama-AI-Chat-Application/blob/main/images/Screenshot%20from%202025-04-21%2017-54-06.png)
+![Interface](https://github.com/Henilgajera/Ollama-AI-Chat-Application/blob/main/images/Screenshot%20from%202025-04-21%2017-54-10.png)
+![Interface](https://github.com/Henilgajera/Ollama-AI-Chat-Application/blob/main/images/Screenshot%20from%202025-04-21%2017-54-15.png)
+![Interface](https://github.com/Henilgajera/Ollama-AI-Chat-Application/blob/main/images/Screenshot%20from%202025-04-21%2017-54-19.png)
+![Interface](https://github.com/Henilgajera/Ollama-AI-Chat-Application/blob/main/images/Screenshot%20from%202025-04-21%2017-54-22.png)
+![Interface](https://github.com/Henilgajera/Ollama-AI-Chat-Application/blob/main/images/Screenshot%20from%202025-04-21%2017-54-26.png)
 
-| Purpose/Component         | Library/Tool Used                                      |
-|--------------------------|--------------------------------------------------------|
-| **API & Backend**        | [FastAPI](https://fastapi.tiangolo.com/)               |
-| **Web UI**               | HTML, CSS, JavaScript (custom, in `static/` & `templates/`) |
-| **RAG Orchestration**    | [LangChain](https://www.langchain.com/)                |
-| **Vector Database**      | [ChromaDB](https://www.trychroma.com/)                 |
-| **Embeddings**           | [Sentence Transformers](https://www.sbert.net/) via LangChain |
-| **LLM Inference**        | [Ollama](https://ollama.ai/) (local LLM runtime)       |
-| **Document Ingestion**   | [PyPDF2](https://pypi.org/project/PyPDF2/), [python-docx](https://python-docx.readthedocs.io/), [Markdown](https://python-markdown.github.io/), [txt] |
-| **Web Scraping**         | [Playwright](https://playwright.dev/python/)           |
-| **Image OCR**            | [Tesseract OCR](https://github.com/tesseract-ocr/tesseract) |
-| **Database Ingestion**   | [SQLAlchemy](https://www.sqlalchemy.org/)    |
-| **Environment Variables**| [python-dotenv](https://pypi.org/project/python-dotenv/) |
-| **Testing**              | [pytest](https://docs.pytest.org/)                     |
-| **Logging**              | Python `logging` module                                |
 
----
+## Tech Stack
 
-## Architecture
-
-```
-RAG-APP/
-├── app/
-│   ├── api/            # FastAPI routes (chat, ingestion)
-│   ├── core/           # Core RAG logic (engine, chat, ingestion, logger)
-│   ├── ingestion/      # Data loaders (documents, web, images)
-│   ├── static/         # Static files for web UI (CSS, JS)
-│   ├── templates/      # HTML templates for web UI
-├── data/               # Vector store, sample docs/images
-├── uploads/            # User-uploaded files
-├── logs/               # Log files
-├── test_*.py           # Test scripts
-├── requirements.txt    # Python dependencies
-├── README.md           # This file
-```
-
-**Main Components:**
-- **`main.py`**: FastAPI entrypoint, serves API and web UI
-- **`core/rag_engine.py`**: Main RAG engine (LLM, embeddings, vector store, memory, chain)
-- **`core/engine_singleton.py`**: Singleton pattern for engine instance
-- **`core/ingestion.py`**: File/web ingestion logic
-- **`core/chat.py`**: Chat orchestration and formatting
-- **`ingestion/`**: Data loaders for document and web
-- **`api/`**: FastAPI routers for chat and ingestion endpoints
-- **`static/`, `templates/`**: Web UI assets
-
----
-
-## How it Works
-
-1. **Ingestion:** Users upload files or provide URLs. Each is processed and embedded into a vector store (ChromaDB).
-2. **Chat:** User asks a question via the web UI. The backend:
-   - Retrieves relevant chunks from the vector DB (Relevance is a normalized score, typically between 0 to 1 derived from the similarity between the user's question embedding and each chunk's embedding in ChromaDB, with higher values indicating greater relevance. This is handled automatically by the vector search and LangChain integration.)
-   - Passes context to the LLM (Ollama or other local models)
-   - Returns an answer with cited sources
-3. **Web UI:** Interactive chat interface, file upload, and source display
-
----
+- **Frontend**: HTML5, CSS3, JavaScript, Bootstrap 5
+- **Backend**: Python, Flask
+- **AI Models**: Ollama (llama3.2, gemma3, phi3, qwen)
+- **Document Processing**: PyPDF2, python-docx
+- **Web Scraping**: BeautifulSoup
+- **Vector Storage**: FAISS
+- **LangChain Integration**: For RAG and agent workflows
 
 ## Prerequisites
 
-- Python 3.9+
-- [Ollama](https://ollama.ai/) (for local LLM inference)
-- [Tesseract OCR](https://github.com/UB-Mannheim/tesseract/wiki) (for image-to-text)
-- [Playwright](https://playwright.dev/python/) (for dynamic web scraping)
-- Git (for version control)
+Before you begin, ensure you have met the following requirements:
 
----
+- Python 3.8 or higher
+- Ollama installed and running locally ([installation instructions](http://localhost:11434/v1)
+- Required Python packages (listed in requirements.txt)
 
-## Installation & Setup
+## Installation
 
-1. **Clone the repository:**
-   ```bash
-   git clone [repository-url]
-   cd RAG-APP
-   ```
-2. **Create a virtual environment:**
-   ```bash
-   python -m venv venv
-   # Windows
-   .\venv\Scripts\activate
-   # Linux/Mac
-   source venv/bin/activate
-   ```
-3. **Install dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-4. **Install Playwright browsers:**
-   ```bash
-   playwright install
-   ```
-5. **Set up Ollama:**
-   - Install Ollama from https://ollama.ai/
-   - Pull the required model:
-     ```bash
-     ollama pull llama2:7b
-     # or
-     ollama pull mixtral:8x7b
-     ```
-6. **Create a .env file:**
-   ```bash
-   cp .env.example .env
-   # Edit as needed
-   ```
-7. **Run the app:**
-   ```bash
-   uvicorn app.main:app --reload
-   ```
-8. **Access the web UI:**
-   - Open [http://localhost:8000](http://localhost:8000) in your browser
+### 1. Clone the repository
 
----
+```bash
+https://github.com/Henilgajera/Ollama-AI-Chat-Application.git
+cd Chat-with-all
+```
+
+### 2. Set up Python environment
+
+```bash
+python -m venv venv
+source venv/bin/activate  # On Windows use `venv\Scripts\activate`
+```
+
+### 3. Install Python dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### 4. Download Ollama models
+
+You'll need to download the models you want to use. For example:
+
+```bash
+ollama pull llama3.2
+ollama pull gemma3
+ollama pull phi3
+ollama pull qwen
+```
+
+### 5. Configure the application
+
+Create a `.env` file in the root directory with your configuration:
+
+```ini
+FLASK_ENV=development
+FLASK_APP=app.py
+OLLAMA_API_BASE=http://localhost:11434
+```
 
 ## Usage
 
-- **Upload documents or provide URLs** via the web UI
-- **Ask questions** in natural language
-- **Get answers** with cited sources and conversational context
-- **Review logs** in the `logs/` directory for debugging
+### Running the Application
 
----
+1. Start the Ollama server (if not already running):
 
-## Testing
+```bash
+ollama serve
+```
 
-- Run scenario and API tests:
-  ```bash
-  pytest test_rag_scenarios.py
-  pytest test_api.py
-  ```
+2. In a separate terminal, start the Flask application:
 
----
+```bash
+flask run
+```
 
-## Extending & Customization
+3. Open your browser and navigate to:
 
-- **Add new loaders:** Place new ingestion logic in `app/ingestion/`
-- **Add new LLMs or embeddings:** Edit `app/core/rag_engine.py`
-- **Customize UI:** Edit files in `app/templates/` and `app/static/`
-- **Change vector DB or storage:** Update `core/rag_engine.py` and config
+```
+http://localhost:5000
+```
 
----
+### Using the Application
+
+1. **Select a Model**: Choose from the available Ollama models in the sidebar, If you want to use Image Chat part then use gemma3 because this is multimodel.
+2. **Choose a Source Type**: Select what you want to chat with (direct chat, documents, websites, etc.).
+3. **Configure the Source**: Follow the setup instructions for your selected source type.
+4. **Start Chatting**: Type your message in the input box and press Enter or click Send.
+
+## Workflow
+
+```mermaid
+graph TD
+    A[User Input] --> B{Source Type}
+    B -->|Direct Chat| C[Query Ollama directly]
+    B -->|Wikipedia| D[Use Wikipedia agent]
+    B -->|Database| E[Query SQL database]
+    B -->|PDF/Word| F[Process document with RAG]
+    B -->|Website| G[Scrape and process content]
+    B -->|Image| G[Scrape and process content]
+    C --> H[Generate Response]
+    D --> H
+    E --> H
+    F --> H
+    G --> H
+    H --> I[Display Response]
+```
+
+## API Endpoints
+
+The backend provides the following API endpoints:
+
+- `POST /api/init_session` - Initialize a new chat session
+- `GET /api/models` - Get available models
+- `POST /api/set_model` - Set the current model
+- `POST /api/set_source` - Set the current source type
+- `POST /api/init_wikipedia` - Initialize Wikipedia agent
+- `POST /api/init_database` - Initialize database connection
+- `POST /api/process_pdf` - Process PDF document
+- `POST /api/process_docx` - Process Word document
+- `POST /api/process_website` - Process website content
+- `POST /api/process_image` - Process image with text prompt
+- `POST /api/chat` - Send chat message
+- `POST /api/history` - Get chat history
+- `POST /api/clear_chat` - Clear chat history
+
+## Configuration
+
+You can configure the application by modifying the following:
+
+1. **Models**: Edit the `get_ollama_llm()` function in `app.py` to change default models.
+2. **File Paths**: Update the directory paths at the top of `app.py` to match your system.
+3. **UI**: Modify the HTML/CSS in `templates/index.html` for visual changes.
 
 ## Troubleshooting
 
-- **Ollama errors:** Ensure Ollama is running and the model is pulled
-- **Playwright issues:** Run `playwright install` again
-- **Tesseract not found:** Add Tesseract to your system PATH
-- **.env issues:** Double-check all required environment variables
+### Common Issues
 
----
+1. **Ollama connection errors**:
+   - Ensure Ollama is running (`ollama serve`)
+   - Check that the API base URL is correct (default: `http://localhost:11434`)
+
+2. **Model not found**:
+   - Verify you've pulled the model (`ollama pull modelname`)
+   - Check the model name is correct
+
+3. **Document processing failures**:
+   - Ensure the file is not corrupted
+   - Check file permissions
+
+### Logs
+
+The application generates logs in `/logs/chat_app.log`. Check this file for detailed error information.
+
+## Contributing
+
+Contributions are welcome! Please follow these steps:
+
+1. Fork the repository
+2. Create a new branch (`git checkout -b feature/your-feature`)
+3. Commit your changes (`git commit -am 'Add some feature'`)
+4. Push to the branch (`git push origin feature/your-feature`)
+5. Open a Pull Request
 
 ## License
 
-This project is open-source and available under the MIT License.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
----
+## Acknowledgments
 
-## Acknowledgements
+- [Ollama](https://ollama.ai/) for providing the AI models
+- [LangChain](https://www.langchain.com/) for the AI orchestration framework
+- [Flask](https://flask.palletsprojects.com/) for the web framework
+- [Bootstrap](https://getbootstrap.com/) for the UI components
 
-- [Ollama](https://ollama.ai/)
-- [ChromaDB](https://www.trychroma.com/)
-- [LangChain](https://www.langchain.com/)
-- [Playwright](https://playwright.dev/)
-- [Tesseract OCR](https://github.com/tesseract-ocr/tesseract)
+## Contact
 
----
+For questions or support, please contact:
 
-## About
-
-**RAG-APP** is designed for privacy, extensibility, and local-first AI. For questions, suggestions, or contributions, please open an issue or pull request on GitHub. 
+Your Name - your.email@example.com  
+Project Link: [https://github.com/Henilgajera/Ollama-AI-Chat-Application](https://github.com/Henilgajera/Ollama-AI-Chat-Application)

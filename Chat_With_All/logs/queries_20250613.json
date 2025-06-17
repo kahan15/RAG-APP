@@ -1,0 +1,29 @@
+{"timestamp": "2025-06-13T11:11:49.949805", "model": "llama3", "source_type": "Direct Chat", "query": "how are you??"}
+{"timestamp": "2025-06-13T11:15:55.737882", "model": "qwen2.5:1.5b", "source_type": "Direct Chat", "query": "how are you?"}
+{"timestamp": "2025-06-13T11:18:00.761745", "model": "qwen2.5:1.5b", "source_type": "Direct Chat", "query": "tell me about you."}
+{"timestamp": "2025-06-13T11:18:44.332851", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is wikipedia"}
+{"timestamp": "2025-06-13T11:24:09.487235", "model": "llama3.2", "source_type": "Direct Chat", "query": "tell me about you."}
+{"timestamp": "2025-06-13T11:24:21.050814", "model": "llama3.2", "source_type": "Wikipedia", "query": "what is wikipedia"}
+{"timestamp": "2025-06-13T11:25:10.771532", "model": "llama3.2", "source_type": "Wikipedia", "query": "give me some more detail"}
+{"timestamp": "2025-06-13T11:28:32.446128", "model": "qwen2.5:1.5b", "source_type": "Direct Chat", "query": "tell me about you."}
+{"timestamp": "2025-06-13T11:59:45.503536", "model": "qwen2.5:1.5b", "source_type": "Direct Chat", "query": "what is AI?"}
+{"timestamp": "2025-06-13T12:27:40.989941", "model": "qwen2.5:1.5b", "source_type": "PDF Document", "query": "give me a summary of this doc"}
+{"timestamp": "2025-06-13T12:28:35.162273", "model": "qwen2.5:1.5b", "source_type": "PDF Document", "query": "give me what is inside the document?"}
+{"timestamp": "2025-06-13T12:29:12.739413", "model": "qwen2.5:1.5b", "source_type": "PDF Document", "query": "how any documents do i uploaded?"}
+{"timestamp": "2025-06-13T12:29:39.361629", "model": "qwen2.5:1.5b", "source_type": "PDF Document", "query": "how many documents have i uploaded till now?"}
+{"timestamp": "2025-06-13T12:30:45.087308", "model": "qwen2.5:1.5b", "source_type": "Website", "query": "give me which python version is recently released?"}
+{"timestamp": "2025-06-13T12:37:29.246836", "model": "qwen2.5:1.5b", "source_type": "Database", "query": "tell me about this database."}
+{"timestamp": "2025-06-13T12:38:17.140015", "model": "qwen2.5:1.5b", "source_type": "Database", "query": "how many documents are there in the database?"}
+{"timestamp": "2025-06-13T12:40:08.362183", "model": "qwen2.5:1.5b", "source_type": "Database", "query": "how many tables are there inside the database?"}
+{"timestamp": "2025-06-13T12:40:37.351062", "model": "qwen2.5:1.5b", "source_type": "Database", "query": "how table are there in the database?"}
+{"timestamp": "2025-06-13T12:41:38.161859", "model": "qwen2.5:1.5b", "source_type": "Database", "query": "how many tables in the database named auth?"}
+{"timestamp": "2025-06-13T12:42:18.930399", "model": "qwen2.5:1.5b", "source_type": "Database", "query": "how many users data is stored in the database?"}
+{"timestamp": "2025-06-13T12:42:51.548160", "model": "qwen2.5:1.5b", "source_type": "Database", "query": "how many documents are there in the database?"}
+{"timestamp": "2025-06-13T12:43:39.588678", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is trending in the Wikipedia?"}
+{"timestamp": "2025-06-13T12:43:57.195665", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is wikipedia?"}
+{"timestamp": "2025-06-13T12:44:44.844247", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is wikipedia?"}
+{"timestamp": "2025-06-13T14:25:15.662689", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is wikipedia?"}
+{"timestamp": "2025-06-13T15:01:59.172776", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "what is wikipedia"}
+{"timestamp": "2025-06-13T15:03:24.678357", "model": "qwen2.5:1.5b", "source_type": "Wikipedia", "query": "for wikipedia  is use?"}
+{"timestamp": "2025-06-13T15:05:21.341783", "model": "llama3.2", "source_type": "Wikipedia", "query": "why people is use Wikipedia?"}
+{"timestamp": "2025-06-13T15:05:43.162632", "model": "llama3.2", "source_type": "Wikipedia", "query": "what is wikipedia?"}
